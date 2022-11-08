@@ -1,0 +1,26 @@
+server:
+  port: 8021
+spring:
+  application:
+    name: rabbitmq-provider
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/mxjt_tele_processing?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+
+mybatis-plus:
+  type-aliases-package: com.lqj.entity
+  mapper-locations: classpath:com/lqj/mapper/xml/*.xml
+  configuration:
+    jdbc-type-for-null: null
+  global-config:
+    banner: false
